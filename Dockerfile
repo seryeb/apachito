@@ -4,7 +4,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install apache2 php5-gd
  	rm /var/log/apache2/*.log && \
 	ln -s /dev/stdout /var/log/apache2/access.log && \
 	ln -s /dev/stdout /var/log/apache2/error.log && \
-	rm -rf /var/lib/apt /var/cache/apt /var/lib/apt/lists && \
+	rm -rf /var/lib/apt /var/cache/apt /var/lib/apt/lists
 EXPOSE 80
 ENTRYPOINT [ "/usr/sbin/apache2ctl" ]
 CMD [ "-d /etc/apache2 -f /etc/apache2/apache2.conf -e debug -DFOREGROUND" ]
